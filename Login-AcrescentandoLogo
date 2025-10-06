@@ -1,0 +1,198 @@
+import React from 'react';
+import { View, StyleSheet, TextInput, TouchableOpacity, Text } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}> 
+      <Text style={styles.achivementTitle}>Login</Text>
+        <Text style={styles.achivementTitle}>Welcome Back!</Text>
+      
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Your Username/ Email"
+        placeholderTextColor="#999"
+        autoCapitalize="none"
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Your Password"
+        placeholderTextColor="#999"
+        secureTextEntry={true}
+      />
+
+              <Text style={styles.achivementTitle}>Forgot Password?</Text>
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.achivementTitle}>Dont have an account?  Singup</Text>
+
+            <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login with Facebook</Text>
+      </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login with google</Text>
+      </TouchableOpacity>
+
+      //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO2Xv1n9tLnM8dI5-ME3cMN4raeWQuDChUyw&s - Link do goolge
+      //https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3p1FHmkcQ4P_zawEP1eWEpdpedQNRn81xOA&s - link do Facebook
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white', // Cor preta
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  achivementTitle: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: 'bold',
+    marginBottom: 40,
+  },
+  input: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 15,
+  },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#0E64D2', // Verde Spotify
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+});
+
+
+
+
+import React from 'react';
+import { View, StyleSheet, TextInput, TouchableOpacity, Text, Image } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}> 
+      <Text style={styles.achivementTitle}>Login</Text>
+      <Text style={styles.achivementTitle}>Welcome Back!</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Your Username/ Email"
+        placeholderTextColor="#999"
+        autoCapitalize="none"
+      />
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter Your Password"
+        placeholderTextColor="#999"
+        secureTextEntry={true}
+      />
+
+      <Text style={styles.achivementTitle}>Forgot Password?</Text>
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.achivementTitle}>Don't have an account? Signup</Text>
+
+      {/* Login with Facebook */}
+      <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
+        <View style={styles.buttonContent}>
+          <Image 
+            source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3p1FHmkcQ4P_zawEP1eWEpdpedQNRn81xOA&s' }} 
+            style={styles.icon} 
+          />
+          <Text style={styles.buttonText}>Login with Facebook</Text>
+        </View>
+      </TouchableOpacity>
+
+      {/* Login with Google */}
+      <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
+        <View style={styles.buttonContent}>
+          <Image 
+            source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO2Xv1n9tLnM8dI5-ME3cMN4raeWQuDChUyw&s' }} 
+            style={styles.icon} 
+          />
+          <Text style={styles.buttonText}>Login with Google</Text>
+        </View>
+      </TouchableOpacity>
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  achivementTitle: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: 'bold',
+    marginBottom: 40,
+  },
+  input: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 15,
+  },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#0E64D2', // Azul para o botão principal
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonSecondary: {
+    backgroundColor: 'transparent', // Fundo transparente para os botões secundários
+    borderWidth: 1,
+    borderColor: '#0E64D2', // Cor azul para o botão secundário
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  buttonContent: {
+    flexDirection: 'row',  // Coloca os elementos lado a lado
+    alignItems: 'center',  // Alinha verticalmente
+    justifyContent: 'center',  // Garante que o conteúdo fique centralizado
+  },
+  icon: {
+    width: 20,  // Tamanho da imagem
+    height: 20, // Tamanho da imagem
+    marginRight: 10,  // Espaço entre a imagem e o texto
+  },
+});
